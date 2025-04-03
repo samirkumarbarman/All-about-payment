@@ -3,7 +3,8 @@ import { loadStripe } from '@stripe/stripe-js';
 import { Elements, CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import './App.css';
 
-const stripePromise = loadStripe('your-publishable-key-here');
+const stripePromise = loadStripe(import.meta.env.STRIPE_PUBLISHABLE_KEY);
+// console.log(`Publisher key:${import.meta.env.STRIPE_PUBLISHABLE_KEY}`);
 
 const CheckoutForm = () => {
   const stripe = useStripe();
